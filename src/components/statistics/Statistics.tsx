@@ -47,7 +47,7 @@ const Statistics = () => {
         >
           {/* Imagen animada */}
           <motion.div
-            className="w-[60rem] flex justify-center items-center overflow-hidden shadow-2xl shadow-black transform hover:scale-105 transition-all duration-500 ease-out"
+            className="w-[55rem] flex justify-center items-center overflow-hidden shadow-2xl shadow-black transform hover:scale-105 transition-all duration-500 ease-out"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
