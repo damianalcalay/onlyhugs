@@ -75,12 +75,13 @@ const Statistics = () => {
               Our Statistics Speak for Themselves
             </h3>
             <p className="text-black max-w-xl">
-              Over the past year, we've achieved remarkable success across every
-              key metric. From a growing number of talented models joining our
-              platform to the substantial earnings generated, our performance is
-              a testament to the hard work and dedication of our team. With tens
-              of thousands of loyal subscribers and consistent financial growth,
-              we continue to set new standards of excellence in the industry.
+              Over the past year, we&aposve achieved remarkable success across
+              every key metric. From a growing number of talented models joining
+              our platform to the substantial earnings generated, our
+              performance is a testament to the hard work and dedication of our
+              team. With tens of thousands of loyal subscribers and consistent
+              financial growth, we continue to set new standards of excellence
+              in the industry.
             </p>
             <button className="relative bg-transparent rounded-xl border border-black text-black text-2xl uppercase w-48 h-auto p-2 overflow-hidden group">
               <span className="relative z-10">Contact us</span>
