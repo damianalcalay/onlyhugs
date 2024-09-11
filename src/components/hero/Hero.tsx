@@ -50,6 +50,20 @@ const HeroSection = () => {
           className="flex flex-col space-y-6 px-6"
           variants={slideLeftToRight}
         >
+          <div className="flex items-center justify-start">
+            <img src="/icons/onlyfans.png" alt="" className="w-20" />
+            <h3 className="uppercase text-3xl text-black font-semibold">
+              <Typewriter
+                words={["#1 onlyfans agency"]}
+                loop={1}
+                cursor
+                cursorStyle=""
+                typeSpeed={75}
+                deleteSpeed={50}
+              />
+            </h3>
+          </div>
+
           <h1 className="uppercase text-[90px] text-black font-semibold max-w-[38rem] leading-[100px]">
             <Typewriter
               words={["Work Less. Earn More."]}

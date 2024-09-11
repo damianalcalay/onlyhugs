@@ -39,7 +39,7 @@ const Statistics = () => {
 
         {/* Animamos el bloque completo */}
         <motion.div
-          className="w-full flex items-center justify-center space-x-20"
+          className="w-full flex items-center justify-center space-x-20 px-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -47,7 +47,7 @@ const Statistics = () => {
         >
           {/* Imagen animada */}
           <motion.div
-            className="w-[55rem] flex justify-center items-center overflow-hidden shadow-2xl shadow-black transform hover:scale-105 transition-all duration-500 ease-out"
+            className="w-[50rem] flex justify-center items-center overflow-hidden shadow-2xl shadow-black transform hover:scale-105 transition-all duration-500 ease-out"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
