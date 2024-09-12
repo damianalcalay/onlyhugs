@@ -12,6 +12,10 @@ interface FormData {
   phone: string;
   message: string;
   termsAccepted: boolean;
+  contentType: string;
+  contentCreationStyle: string;
+  experience: string;
+  niche: string[];
 }
 
 // Definimos la animación como un variant
@@ -42,20 +46,38 @@ const Contact = () => {
     phone: "",
     message: "",
     termsAccepted: false,
+    contentType: "",
+    contentCreationStyle: "",
+    experience: "",
+    niche: [],
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value, type } = e.target;
 
+    // Si el campo es un checkbox (términos y condiciones)
     if (type === "checkbox") {
       const target = e.target as HTMLInputElement;
       setFormData((prevData) => ({
         ...prevData,
         [name]: target.checked,
       }));
+    } else if (name === "niche") {
+      // Si es el select múltiple (niche)
+      const selectedOptions = Array.from(
+        (e.target as HTMLSelectElement).selectedOptions,
+        (option) => option.value
+      );
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: selectedOptions,
+      }));
     } else {
+      // Otros campos (input text, textarea, select simple)
       setFormData((prevData) => ({
         ...prevData,
         [name]: value,
@@ -74,6 +96,7 @@ const Contact = () => {
     e.preventDefault();
     if (formData.termsAccepted) {
       console.log("Form submitted successfully", formData);
+      // Puedes realizar acciones adicionales aquí, como enviar los datos a un servidor
     } else {
       alert("Please accept the terms and conditions to submit the form.");
     }
@@ -142,18 +165,87 @@ const Contact = () => {
             ></textarea>
           </motion.div>
 
-          {/* Phone field with custom styles */}
+          {/* Phone field */}
           <motion.div className="relative" variants={slideLeftToRight}>
             <PhoneInput
-              country={"us"} // País predeterminado
+              country={"us"}
               value={formData.phone}
               onChange={handlePhoneChange}
               inputClass="w-full p-2 text-black border-b-2 border-primary focus:outline-none focus:border-primary"
-              containerClass="phone-input-container text-black border-primary" // Clase personalizada para el contenedor
-              buttonClass="phone-input-button" // Clase personalizada para el botón de bandera
-              dropdownClass="phone-input-dropdown" // Clase personalizada para el desplegable
-              enableSearch={true} // Habilitar búsqueda de país
+              containerClass="phone-input-container text-black border-primary"
+              buttonClass="phone-input-button"
+              dropdownClass="phone-input-dropdown"
+              enableSearch={true}
             />
+          </motion.div>
+
+          {/* Tipo de contenido (select simple) */}
+          <motion.div className="relative" variants={slideLeftToRight}>
+            <select
+              name="contentType"
+              value={formData.contentType}
+              onChange={handleChange}
+              required
+              className="w-full p-2 text-black border-b-2 border-primary focus:outline-none focus:border-primary"
+            >
+              <option value="">Tipo de contenido</option>
+              <option value="video">Video</option>
+              <option value="fotos">Fotos</option>
+              <option value="artículos">Artículos</option>
+              <option value="streams en vivo">Streams en vivo</option>
+            </select>
+          </motion.div>
+
+          {/* Cómo crea contenido (select simple) */}
+          <motion.div className="relative" variants={slideLeftToRight}>
+            <select
+              name="contentCreationStyle"
+              value={formData.contentCreationStyle}
+              onChange={handleChange}
+              required
+              className="w-full p-2 text-black border-b-2 border-primary focus:outline-none focus:border-primary"
+            >
+              <option value="">¿Cómo creas contenido?</option>
+              <option value="solo">Solo</option>
+              <option value="con otra chica">Con otra chica</option>
+              <option value="con otro chico">Con otro chico</option>
+              <option value="en grupo">En grupo</option>
+            </select>
+          </motion.div>
+
+          {/* Experiencia (select simple) */}
+          <motion.div className="relative" variants={slideLeftToRight}>
+            <select
+              name="experience"
+              value={formData.experience}
+              onChange={handleChange}
+              required
+              className="w-full p-2 text-black border-b-2 border-primary focus:outline-none focus:border-primary"
+            >
+              <option value="">Experiencia</option>
+              <option value="menos de 1 año">Menos de 1 año</option>
+              <option value="entre 1 y 2 años">Entre 1 y 2 años</option>
+              <option value="más de 2 años">Más de 2 años</option>
+            </select>
+          </motion.div>
+
+          {/* Nicho (select múltiple) */}
+          <motion.div className="relative" variants={slideLeftToRight}>
+            <select
+              name="niche"
+              value={formData.niche}
+              onChange={handleChange}
+              multiple
+              required
+              className="w-full p-2 text-black border-b-2 border-primary focus:outline-none focus:border-primary"
+            >
+              <option value="fitness">Fitness</option>
+              <option value="lifestyle">Lifestyle</option>
+              <option value="moda">Moda</option>
+              <option value="tecnología">Tecnología</option>
+              <option value="gaming">Gaming</option>
+              <option value="viajes">Viajes</option>
+            </select>
           </motion.div>
 
           {/* Terms and conditions checkbox */}
@@ -167,7 +259,9 @@ const Contact = () => {
               className="mr-2"
             />
             <label className="text-black">
-              I have read and accept the privacy policy and terms of service.
+              I have read and accept the{" "}
+              <a href="politica-de-privacidad">privacy policy</a> and{" "}
+              <a href="terminos-de-servicio">terms of service</a>.
             </label>
           </motion.div>
 
