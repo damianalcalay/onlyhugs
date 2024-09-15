@@ -6,7 +6,7 @@ const TermsOfService = () => {
     <div className="container mx-auto px-4 py-8 text-black">
       <h1 className="text-3xl font-bold mb-4">Términos de Servicio</h1>
       <p className="mb-4">
-        Bienvenido a <strong>ONLYHUGS</strong>. Al acceder a nuestro sitio web y
+        Bienvenido a <strong>ONLYHXGS</strong>. Al acceder a nuestro sitio web y
         utilizar nuestros servicios, aceptas cumplir con estos Términos de
         Servicio. Si no estás de acuerdo con alguno de los términos aquí
         expuestos, te pedimos que no utilices nuestro sitio web o nuestros
@@ -37,7 +37,7 @@ const TermsOfService = () => {
       <p className="mb-4">
         Todo el contenido de este sitio web, incluidos textos, gráficos,
         logotipos, imágenes, videos y cualquier otro material, es propiedad de{" "}
-        <strong>ONLYHUGS</strong> o de sus licenciantes y está protegido por las
+        <strong>ONLYHXGS</strong> o de sus licenciantes y está protegido por las
         leyes de propiedad intelectual. No puedes utilizar, copiar, reproducir o
         distribuir ningún contenido sin nuestro previo consentimiento por
         escrito.
@@ -87,7 +87,7 @@ const TermsOfService = () => {
       <h2 className="text-2xl font-semibold mb-2">8. Ley Aplicable</h2>
       <p className="mb-4">
         Estos Términos de Servicio se regirán e interpretarán de acuerdo con las
-        leyes del país donde opera <strong>ONLYHUGS</strong>. Cualquier disputa
+        leyes del país donde opera <strong>ONLYHXGS</strong>. Cualquier disputa
         relacionada con estos términos será resuelta en los tribunales de esa
         jurisdicción.
       </p>
@@ -99,7 +99,7 @@ const TermsOfService = () => {
       </p>
       <p className="mb-4">
         Correo electrónico:{" "}
-        <a href="mailto:onlyhugs@soporte.com" className="text-blue-500">
+        <a href="mailto:ONLYHXGS@soporte.com" className="text-blue-500">
           [correo electrónico de contacto]
         </a>
       </p>

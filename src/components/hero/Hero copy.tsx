@@ -11,23 +11,9 @@ const slideLeftToRight = {
 
 const Statistics = () => {
   return (
-    <section
-      className="w-full h-min-screen md:px-6 lg:px-10 xl:px-20 pb-20 flex flex-col xl:space-y-20"
-      id="our-impact"
-    >
+    <section className="w-full h-min-screen md:px-6 lg:px-10 xl:px-20 lg:py-20 flex flex-col xl:space-y-20 ">
       <motion.div
-        className="relative"
-        variants={slideLeftToRight}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        <h2 className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-center uppercase text-black pt-20 pb-8">
-          Numbers speak for us
-        </h2>
-      </motion.div>
-      <motion.div
-        className="flex flex-col 2xl:flex-row items-center"
+        className="flex flex-col xl:flex-row items-center"
         id="home"
         initial="hidden"
         whileInView="visible"
@@ -35,20 +21,20 @@ const Statistics = () => {
         variants={slideLeftToRight}
       >
         <motion.div
-          className="w-full xl:w-[100rem] flex items-center justify-center overflow-hidden mt-6 xl:mt-0 pb-6 px-6"
+          className="w-full xl:w-[100rem] flex justify-center items-center overflow-hidden mt-6 xl:mt-0"
           variants={slideLeftToRight}
         >
           <img
             src="/assets/charts.png"
             alt="Chart Image"
-            className="object-cover object-center w-full pt-4 xl:pt-0 xl:px-40 2xl:px-0"
+            className="object-cover object-center w-80 md:w-[40rem] xl:w-full h-auto xl:h-full mr-10 pt-4 xl:pt-0 pb-4"
           />
         </motion.div>
         <motion.div
           className="flex flex-col space-y-6 px-6 xl:text-left"
           variants={slideLeftToRight}
         >
-          <h1 className="uppercase text-4xl xl:text-[90px] text-black font-semibold max-w-full leading-[2.5rem] xl:leading-[100px]">
+          <h1 className="uppercase text-4xl xl:text-[90px] text-black font-semibold max-w-full xl:max-w-[38rem] leading-[2.5rem] xl:leading-[100px]">
             Growth Across Every Metric
           </h1>
           <h3 className="uppercase text-2xl xl:text-5xl text-black tracking-wider w-full xl:w-[50rem] leading-[1.75rem] xl:leading-[3.5rem]">

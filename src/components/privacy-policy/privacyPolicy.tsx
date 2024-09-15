@@ -6,7 +6,7 @@ const PrivacyPolicy = () => {
     <div className="container mx-auto px-4 py-8 text-black">
       <h1 className="text-3xl font-bold mb-4">Política de Privacidad</h1>
       <p className="mb-4">
-        En <strong>ONLYHUGS S.L.</strong> (en adelante, “la Agencia”), nos
+        En <strong>ONLYHXGS S.L.</strong> (en adelante, “la Agencia”), nos
         comprometemos a proteger y respetar la privacidad de nuestros usuarios.
         Esta Política de Privacidad describe cómo recopilamos, utilizamos y
         protegemos la información personal que proporcionas al utilizar nuestra
@@ -96,7 +96,7 @@ const PrivacyPolicy = () => {
       <p className="mb-4">
         Para ejercer cualquiera de estos derechos, puedes ponerte en contacto
         con nosotros a través del correo electrónico{" "}
-        <a href="mailto:onlyhugs@soporte.com" className="text-blue-500">
+        <a href="mailto:ONLYHXGS@soporte.com" className="text-blue-500">
           [correo electrónico de contacto]
         </a>
         .
@@ -136,7 +136,7 @@ const PrivacyPolicy = () => {
       </p>
       <p className="mb-4">
         Correo electrónico:{" "}
-        <a href="mailto:onlyhugs@soporte.com" className="text-blue-500">
+        <a href="mailto:ONLYHXGS@soporte.com" className="text-blue-500">
           [correo electrónico de contacto]
         </a>
       </p>

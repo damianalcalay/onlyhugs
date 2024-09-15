@@ -16,8 +16,8 @@ const slideLeftToRight = {
 
 const Features = () => {
   return (
-    <section id="capabilities" className="pt-28">
-      <div className="flex flex-col justify-start items-center w-full h-screen space-y-40">
+    <section id="capabilities" className="pt-28 px-4 md:px-8 lg:px-16">
+      <div className="flex flex-col justify-start items-center w-full space-y-12 md:space-y-24 lg:space-y-32">
         <motion.div
           className="relative"
           variants={slideLeftToRight}
@@ -25,7 +25,7 @@ const Features = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-center uppercase text-black">
+          <h2 className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-center uppercase text-black">
             Choose excellence, work with the finest.
           </h2>
         </motion.div>
@@ -35,98 +35,61 @@ const Features = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="grid grid-cols-6 md:grid-cols-2 lg:grid-cols-3 gap-y-20 place-items-center place-content-center w-full px-64"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16 place-items-center w-full"
         >
-          <div className="relative bg-white rounded-lg shadow-2xl py-10 px-4 w-[26rem] h-[14rem] transform transition duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2 group overflow-hidden flex flex-col items-center justify-center">
-            <div className="text-blue-500 text-4xl mb-4">
-              <FaDollarSign />
+          {[
+            {
+              icon: <FaDollarSign />,
+              title: "Maximize Your Earnings",
+              description:
+                "Let us handle the business, while you focus on creating.",
+            },
+            {
+              icon: <FaHeadset />,
+              title: "24/7 Support for You",
+              description: "We’re always here, anytime you need us.",
+            },
+            {
+              icon: <FaChartLine />,
+              title: "Custom Growth Strategies",
+              description: "Tailored plans to grow your fanbase faster.",
+            },
+            {
+              icon: <FaShieldAlt />,
+              title: "Privacy and Security First",
+              description: "Your identity and content are fully protected.",
+            },
+            {
+              icon: <FaBullhorn />,
+              title: "Exclusive Marketing Tools",
+              description: "Boost your visibility with pro-level promotion.",
+            },
+            {
+              icon: <FaUsers />,
+              title: "Build a Loyal Community",
+              description:
+                "Create deeper connections with your most devoted fans.",
+            },
+          ].map(({ icon, title, description }, index) => (
+            <div
+              key={index}
+              className="relative bg-white rounded-lg shadow-md py-8 px-6 transform transition duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 group overflow-hidden flex flex-col items-center justify-center"
+            >
+              <div className="text-blue-500 text-3xl md:text-4xl mb-4">
+                {icon}
+              </div>
+              <h2 className="text-xl md:text-2xl font-bold mb-2 text-black text-center">
+                {title}
+              </h2>
+              <p className="text-gray-600 text-center text-sm md:text-base">
+                {description}
+              </p>
+              <span
+                className="absolute left-0 bottom-0 w-full h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 
+                transition-transform duration-300 ease-out origin-left"
+              />
             </div>
-            <h2 className="text-2xl font-bold mb-2 text-black text-center">
-              Maximize Your Earnings
-            </h2>
-            <p className="text-gray-600 text-center">
-              Let us handle the business, while you focus on creating.
-            </p>
-            <span
-              className="absolute left-0 bottom-0 w-full h-[4px] bg-blue-500 scale-x-0 group-hover:scale-x-100 
-            transition-transform duration-300 ease-out origin-left"
-            />
-          </div>
-          <div className="relative bg-white rounded-lg shadow-2xl py-10 px-4 w-[26rem] h-[14rem] transform transition duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2 group overflow-hidden flex flex-col items-center justify-center">
-            <div className="text-blue-500 text-4xl mb-4">
-              <FaHeadset />
-            </div>
-            <h2 className="text-2xl font-bold mb-2 text-black text-center">
-              24/7 Support for You
-            </h2>
-            <p className="text-gray-600 text-center">
-              We’re always here, anytime you need us.
-            </p>
-            <span
-              className="absolute left-0 bottom-0 w-full h-[4px] bg-blue-500 scale-x-0 group-hover:scale-x-100 
-            transition-transform duration-300 ease-out origin-left"
-            />
-          </div>
-          <div className="relative bg-white rounded-lg shadow-2xl py-10 px-4 w-[26rem] h-[14rem] transform transition duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2 group overflow-hidden flex flex-col items-center justify-center">
-            <div className="text-blue-500 text-4xl mb-4">
-              <FaChartLine />
-            </div>
-            <h2 className="text-2xl font-bold mb-2 text-black text-center">
-              Custom Growth Strategies
-            </h2>
-            <p className="text-gray-600 text-center">
-              Tailored plans to grow your fanbase faster.
-            </p>
-            <span
-              className="absolute left-0 bottom-0 w-full h-[4px] bg-blue-500 scale-x-0 group-hover:scale-x-100 
-            transition-transform duration-300 ease-out origin-left"
-            />
-          </div>
-          <div className="relative bg-white rounded-lg shadow-2xl py-10 px-4 w-[26rem] h-[14rem] transform transition duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2 group overflow-hidden flex flex-col items-center justify-center">
-            <div className="text-blue-500 text-4xl mb-4">
-              <FaShieldAlt />
-            </div>
-            <h2 className="text-2xl font-bold mb-2 text-black text-center">
-              Privacy and Security First
-            </h2>
-            <p className="text-gray-600 text-center">
-              Your identity and content are fully protected.
-            </p>
-            <span
-              className="absolute left-0 bottom-0 w-full h-[4px] bg-blue-500 scale-x-0 group-hover:scale-x-100 
-            transition-transform duration-300 ease-out origin-left"
-            />
-          </div>
-          <div className="relative bg-white rounded-lg shadow-2xl py-10 px-4 w-[26rem] h-[14rem] transform transition duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2 group overflow-hidden flex flex-col items-center justify-center">
-            <div className="text-blue-500 text-4xl mb-4">
-              <FaBullhorn />
-            </div>
-            <h2 className="text-2xl font-bold mb-2 text-black text-center">
-              Exclusive Marketing Tools
-            </h2>
-            <p className="text-gray-600 text-center">
-              Boost your visibility with pro-level promotion.
-            </p>
-            <span
-              className="absolute left-0 bottom-0 w-full h-[4px] bg-blue-500 scale-x-0 group-hover:scale-x-100 
-            transition-transform duration-300 ease-out origin-left"
-            />
-          </div>
-          <div className="relative bg-white rounded-lg shadow-2xl py-10 px-4 w-[26rem] h-[14rem] transform transition duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-2 group overflow-hidden flex flex-col items-center justify-center">
-            <div className="text-blue-500 text-4xl mb-4">
-              <FaUsers />
-            </div>
-            <h2 className="text-2xl font-bold mb-2 text-black text-center">
-              Build a Loyal Community
-            </h2>
-            <p className="text-gray-600 text-center">
-              Create deeper connections with your most devoted fans.
-            </p>
-            <span
-              className="absolute left-0 bottom-0 w-full h-[4px] bg-blue-500 scale-x-0 group-hover:scale-x-100 
-            transition-transform duration-300 ease-out origin-left"
-            />
-          </div>
+          ))}
         </motion.div>
       </div>
     </section>

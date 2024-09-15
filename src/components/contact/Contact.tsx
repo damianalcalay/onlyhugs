@@ -112,7 +112,7 @@ const Contact = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-center uppercase text-black">
+          <h2 className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-center uppercase text-black">
             Connect with us.
           </h2>
         </motion.div>
@@ -271,10 +271,10 @@ const Contact = () => {
             variants={slideLeftToRight}
           >
             <button
-              className="relative bg-transparent rounded-xl border border-black text-black text-2xl uppercase w-48 h-auto p-2 overflow-hidden group"
               type="submit"
+              className="relative bg-transparent rounded-xl border border-black text-black text-base xl:text-2xl uppercase w-32 xl:w-48 h-auto p-2 overflow-hidden group"
             >
-              <span className="relative z-10">Submit</span>
+              <span className="relative z-10">Contact us</span>
               <span className="absolute inset-0 bg-primary transition-transform duration-300 ease-out transform translate-x-[-100%] group-hover:translate-x-0" />
             </button>
           </motion.div>
