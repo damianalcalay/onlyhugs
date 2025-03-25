@@ -3,12 +3,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-interface Route {
-  id: number;
-  label: string;
-  url: string;
-}
-
 const routes = [
   {
     id: 1,

@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Carousel from "../carousel/Carousel";
 import Link from "next/link";
 import Slider from "../slider/Slider";
 

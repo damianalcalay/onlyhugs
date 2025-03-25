@@ -105,13 +105,14 @@ const HeroSection = () => {
           </motion.div>
 
           <motion.div
-            className="w-full xl:w-[100rem] flex justify-center items-center overflow-hidden mt-6 xl:mt-0 pb-10"
+            className="relative w-full xl:w-[100rem] flex justify-center items-center mt-6 xl:mt-0 pb-10 overflow-visible"
             variants={slideLeftToRight}
           >
+            <div className="blur-ellipse top-16 left-36 -translate-x-1/2 -z-10"></div>
             <img
               src="/assets/statistics.png"
               alt="statistics"
-              className="object-cover object-center w-80 md:w-[40rem] xl:w-full h-auto xl:h-full mr-10 pt-4 xl:pt-0"
+              className="object-cover object-center w-80 md:w-[40rem] xl:w-full h-auto xl:h-full mr-10 pt-4 xl:pt-0 z-10"
             />
           </motion.div>
         </motion.div>
