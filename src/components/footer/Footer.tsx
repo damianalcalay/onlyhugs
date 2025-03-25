@@ -9,22 +9,27 @@ export function Footer() {
           <ul className="space-y-2">
             <li>
               <a href="#home" className="hover:underline">
-                Home
+                Services
               </a>
             </li>
             <li>
               <a href="#capabilities" className="hover:underline">
-                Capabilities
+                Statistics
               </a>
             </li>
             <li>
               <a href="#our-impact" className="hover:underline">
-                Our Impact
+                Our Work
               </a>
             </li>
             <li>
               <a href="#connect-with-us" className="hover:underline">
-                Connect with Us
+                FAQ
+              </a>
+            </li>
+            <li>
+              <a href="#connect-with-us" className="hover:underline">
+                Contact Us
               </a>
             </li>
           </ul>
@@ -50,14 +55,14 @@ export function Footer() {
         {/* Tercera columna: Información de contacto */}
         <div>
           <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-          <p>Email: support@ONLYHXGS.com</p>
+          <p>Email: support@BLUEBELBET.com</p>
           <p>Phone: +1 (555) 123-4567</p>
         </div>
       </div>
 
       {/* Derechos reservados */}
       <div className="mt-8 text-center px-4">
-        <p>© 2024 ONLYHXGS. All rights reserved.</p>
+        <p>© 2024 BLUEBELBET. All rights reserved.</p>
       </div>
     </footer>
   );

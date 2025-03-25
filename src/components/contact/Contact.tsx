@@ -18,7 +18,6 @@ interface FormData {
   niche: string[];
 }
 
-// Definimos la animación como un variant
 const slideLeftToRight = {
   hidden: {
     opacity: 0,
@@ -42,7 +41,7 @@ const Contact = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
-    countryCode: "+34",
+    countryCode: "",
     phone: "",
     message: "",
     termsAccepted: false,
@@ -53,32 +52,27 @@ const Contact = () => {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value, type } = e.target;
 
-    // Si el campo es un checkbox (términos y condiciones)
     if (type === "checkbox") {
       const target = e.target as HTMLInputElement;
-      setFormData((prevData) => ({
+      setFormData(prevData => ({
         ...prevData,
         [name]: target.checked,
       }));
     } else if (name === "niche") {
-      // Si es el select múltiple (niche)
       const selectedOptions = Array.from(
         (e.target as HTMLSelectElement).selectedOptions,
-        (option) => option.value
+        option => option.value
       );
-      setFormData((prevData) => ({
+      setFormData(prevData => ({
         ...prevData,
         [name]: selectedOptions,
       }));
     } else {
-      // Otros campos (input text, textarea, select simple)
-      setFormData((prevData) => ({
+      setFormData(prevData => ({
         ...prevData,
         [name]: value,
       }));
@@ -86,7 +80,7 @@ const Contact = () => {
   };
 
   const handlePhoneChange = (value: string) => {
-    setFormData((prevData) => ({
+    setFormData(prevData => ({
       ...prevData,
       phone: value,
     }));
@@ -96,14 +90,13 @@ const Contact = () => {
     e.preventDefault();
     if (formData.termsAccepted) {
       console.log("Form submitted successfully", formData);
-      // Puedes realizar acciones adicionales aquí, como enviar los datos a un servidor
     } else {
       alert("Please accept the terms and conditions to submit the form.");
     }
   };
 
   return (
-    <section id="connect-with-us" className="pb-20">
+    <section id="contact-us" className="pb-20 ">
       <div className="container mx-auto px-4">
         <motion.div
           className="relative"
@@ -112,12 +105,12 @@ const Contact = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-center uppercase text-black">
-            Connect with us.
+          <h2 className="w-full text-center text-white text-5xl pb-10">
+            <span className="text-[#00AEEF]">C</span>ONNECT{" "}
+            <span className="text-[#00AEEF]">W</span>ITH <span className="text-[#00AEEF]">U</span>S
           </h2>
         </motion.div>
 
-        {/* Aplicamos motion.div con la animación */}
         <motion.form
           onSubmit={handleSubmit}
           className="space-y-6 pt-10"
@@ -126,7 +119,6 @@ const Contact = () => {
           viewport={{ once: true }}
           variants={slideLeftToRight}
         >
-          {/* Name field */}
           <motion.div className="relative" variants={slideLeftToRight}>
             <input
               type="text"
@@ -135,11 +127,10 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="Name"
               required
-              className="w-full p-2 text-black border-b-2 border-primary focus:outline-none focus:border-primary"
+              className="w-full p-2 text-white border-b-2 bg-black placeholder:text-white rounded-md"
             />
           </motion.div>
 
-          {/* Email field */}
           <motion.div className="relative" variants={slideLeftToRight}>
             <input
               type="email"
@@ -148,11 +139,10 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="Email"
               required
-              className="w-full p-2 text-black border-b-2 border-primary focus:outline-none focus:border-primary"
+              className="w-full p-2 text-white border-b-2 bg-black placeholder:text-white rounded-md"
             />
           </motion.div>
 
-          {/* Message field */}
           <motion.div className="relative" variants={slideLeftToRight}>
             <textarea
               name="message"
@@ -161,32 +151,30 @@ const Contact = () => {
               placeholder="Message"
               rows={4}
               required
-              className="w-full p-2 text-black border-b-2 border-primary focus:outline-none focus:border-primary"
+              className="w-full p-2 text-white border-b-2 bg-black placeholder:text-white rounded-md"
             ></textarea>
           </motion.div>
 
-          {/* Phone field */}
           <motion.div className="relative" variants={slideLeftToRight}>
             <PhoneInput
               country={"us"}
               value={formData.phone}
               onChange={handlePhoneChange}
               inputClass="w-full p-2 text-black border-b-2 border-primary focus:outline-none focus:border-primary"
-              containerClass="phone-input-container text-black border-primary"
+              containerClass="phone-input-container text-black border-primary "
               buttonClass="phone-input-button"
               dropdownClass="phone-input-dropdown"
               enableSearch={true}
             />
           </motion.div>
 
-          {/* Tipo de contenido (select simple) */}
           <motion.div className="relative" variants={slideLeftToRight}>
             <select
               name="contentType"
               value={formData.contentType}
               onChange={handleChange}
               required
-              className="w-full p-2 text-black border-b-2 border-primary focus:outline-none focus:border-primary"
+              className="w-full p-2 text-white border-b-2 bg-black placeholder:text-white rounded-md"
             >
               <option value="">Tipo de contenido</option>
               <option value="video">Video</option>
@@ -196,14 +184,13 @@ const Contact = () => {
             </select>
           </motion.div>
 
-          {/* Cómo crea contenido (select simple) */}
           <motion.div className="relative" variants={slideLeftToRight}>
             <select
               name="contentCreationStyle"
               value={formData.contentCreationStyle}
               onChange={handleChange}
               required
-              className="w-full p-2 text-black border-b-2 border-primary focus:outline-none focus:border-primary"
+              className="w-full p-2 text-white border-b-2 bg-black placeholder:text-white rounded-md"
             >
               <option value="">¿Cómo creas contenido?</option>
               <option value="solo">Solo</option>
@@ -213,14 +200,13 @@ const Contact = () => {
             </select>
           </motion.div>
 
-          {/* Experiencia (select simple) */}
           <motion.div className="relative" variants={slideLeftToRight}>
             <select
               name="experience"
               value={formData.experience}
               onChange={handleChange}
               required
-              className="w-full p-2 text-black border-b-2 border-primary focus:outline-none focus:border-primary"
+              className="w-full p-2 text-white border-b-2 bg-black placeholder:text-white rounded-md"
             >
               <option value="">Experiencia</option>
               <option value="menos de 1 año">Menos de 1 año</option>
@@ -229,7 +215,6 @@ const Contact = () => {
             </select>
           </motion.div>
 
-          {/* Nicho (select múltiple) */}
           <motion.div className="relative" variants={slideLeftToRight}>
             <select
               name="niche"
@@ -237,7 +222,7 @@ const Contact = () => {
               onChange={handleChange}
               multiple
               required
-              className="w-full p-2 text-black border-b-2 border-primary focus:outline-none focus:border-primary"
+              className="w-full p-2 text-white border-b-2 bg-black placeholder:text-white rounded-md"
             >
               <option value="fitness">Fitness</option>
               <option value="lifestyle">Lifestyle</option>
@@ -248,7 +233,6 @@ const Contact = () => {
             </select>
           </motion.div>
 
-          {/* Terms and conditions checkbox */}
           <motion.div className="flex items-center" variants={slideLeftToRight}>
             <input
               type="checkbox"
@@ -259,23 +243,20 @@ const Contact = () => {
               className="mr-2"
             />
             <label className="text-black">
-              I have read and accept the{" "}
-              <a href="politica-de-privacidad">privacy policy</a> and{" "}
+              I have read and accept the <a href="politica-de-privacidad">privacy policy</a> and{" "}
               <a href="terminos-de-servicio">terms of service</a>.
             </label>
           </motion.div>
 
-          {/* Submit button */}
           <motion.div
             className="w-full flex items-center justify-center"
             variants={slideLeftToRight}
           >
             <button
               type="submit"
-              className="relative bg-transparent rounded-xl border border-black text-black text-base xl:text-2xl uppercase w-32 xl:w-48 h-auto p-2 overflow-hidden group"
+              className="bg-[#00AEEF] rounded-full text-white text-sm md:text-lg uppercase w-32 md:w-40 lg:w-48 h-auto p-2"
             >
-              <span className="relative z-10">Contact us</span>
-              <span className="absolute inset-0 bg-primary transition-transform duration-300 ease-out transform translate-x-[-100%] group-hover:translate-x-0" />
+              Apply Now
             </button>
           </motion.div>
         </motion.form>

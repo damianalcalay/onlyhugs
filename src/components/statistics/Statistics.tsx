@@ -2,6 +2,9 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Carousel from "../carousel/Carousel";
+import Link from "next/link";
+import Slider from "../slider/Slider";
 
 // Definimos la animación para todo el bloque
 const slideLeftToRight = {
@@ -13,7 +16,7 @@ const Statistics = () => {
   return (
     <section
       className="w-full h-min-screen md:px-6 lg:px-10 xl:px-20 pb-20 flex flex-col xl:space-y-20"
-      id="our-impact"
+      id="statistics"
     >
       <motion.div
         className="relative"
@@ -22,8 +25,10 @@ const Statistics = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <h2 className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-center uppercase text-black pt-20 pb-8">
-          Numbers speak for us
+        <h2 className="w-full text-center text-white text-5xl pb-10">
+          <span className="text-[#00AEEF]">N</span>UMBER <span className="text-[#00AEEF]">S</span>
+          PEAK <span className="text-[#00AEEF]">F</span>
+          OR <span className="text-[#00AEEF]">U</span>S
         </h2>
       </motion.div>
       <motion.div
@@ -35,38 +40,33 @@ const Statistics = () => {
         variants={slideLeftToRight}
       >
         <motion.div
-          className="w-full xl:w-[100rem] flex items-center justify-center overflow-hidden mt-6 xl:mt-0 pb-6 px-6"
+          className="w-full xl:w-[900px] flex items-center justify-center overflow-hidden mt-6 xl:mt-0 pb-6 px-6"
           variants={slideLeftToRight}
         >
-          <img
-            src="/assets/charts.png"
-            alt="Chart Image"
-            className="object-cover object-center w-full pt-4 xl:pt-0 xl:px-40 2xl:px-0"
-          />
+          <Carousel></Carousel>
         </motion.div>
         <motion.div
-          className="flex flex-col space-y-6 px-6 xl:text-left"
+          className="flex flex-col space-y-6 px-6 max-w-[700px] xl:text-left"
           variants={slideLeftToRight}
         >
-          <h1 className="uppercase text-4xl xl:text-[90px] text-black font-semibold max-w-full leading-[2.5rem] xl:leading-[100px]">
-            Growth Across Every Metric
+          <h1 className="uppercase text-4xl xl:text-[58px] text-white font-semibold max-w-full leading-[2.5rem] xl:leading-[3.5rem]">
+            Growth Across <span className="text-[#00AEEF]">Every Metric.</span>
           </h1>
-          <h3 className="uppercase text-2xl xl:text-5xl text-black tracking-wider w-full xl:w-[50rem] leading-[1.75rem] xl:leading-[3.5rem]">
+          <h3 className="uppercase text-[32px] xl:text-5xl text-white tracking-wider w-full xl:w-[50rem] leading-[1.75rem] xl:leading-[3.5rem]">
             Our Statistics Speak for Themselves
           </h3>
-          <p className="text-black max-w-full xl:max-w-xl text-sm xl:text-base">
-            Over the past year, we&aposve achieved remarkable success across
-            every key metric. From a growing number of talented models joining
-            our platform to the substantial earnings generated, our performance
-            is a testament to the hard work and dedication of our team. With
-            tens of thousands of loyal subscribers and consistent financial
-            growth, we continue to set new standards of excellence in the
-            industry.
+          <p className="text-white max-w-full xl:max-w-2xl text-sm xl:text-[18px]">
+            Over the past year, we&aposve achieved remarkable success across every key metric. From
+            a growing number of talented models joining our platform to the substantial earnings
+            generated, our performance is a testament to the hard work and dedication of our team.
+            With tens of thousands of loyal subscribers and consistent financial growth, we continue
+            to set new standards of excellence in the industry.
           </p>
-          <button className="relative bg-transparent rounded-xl border border-black text-black text-base xl:text-2xl uppercase w-32 xl:w-48 h-auto p-2 overflow-hidden group">
-            <span className="relative z-10">Contact us</span>
-            <span className="absolute inset-0 bg-primary transition-transform duration-300 ease-out transform translate-x-[-100%] group-hover:translate-x-0" />
-          </button>
+          <Link href="#connect-with-us">
+            <button className="btn-pulse bg-[#00AEEF] rounded-full text-white text-sm md:text-lg uppercase w-32 md:w-40 lg:w-48 h-auto p-2">
+              Apply Now
+            </button>
+          </Link>
         </motion.div>
       </motion.div>
     </section>

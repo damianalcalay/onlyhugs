@@ -25,7 +25,7 @@ const Features = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-center uppercase text-black">
+          <h2 className="text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-center uppercase text-white">
             Choose excellence, work with the finest.
           </h2>
         </motion.div>
@@ -41,8 +41,7 @@ const Features = () => {
             {
               icon: <FaDollarSign />,
               title: "Maximize Your Earnings",
-              description:
-                "Let us handle the business, while you focus on creating.",
+              description: "Let us handle the business, while you focus on creating.",
             },
             {
               icon: <FaHeadset />,
@@ -67,23 +66,16 @@ const Features = () => {
             {
               icon: <FaUsers />,
               title: "Build a Loyal Community",
-              description:
-                "Create deeper connections with your most devoted fans.",
+              description: "Create deeper connections with your most devoted fans.",
             },
           ].map(({ icon, title, description }, index) => (
             <div
               key={index}
               className="relative bg-white rounded-lg shadow-md py-8 px-6 transform transition duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2 group overflow-hidden flex flex-col items-center justify-center"
             >
-              <div className="text-blue-500 text-3xl md:text-4xl mb-4">
-                {icon}
-              </div>
-              <h2 className="text-xl md:text-2xl font-bold mb-2 text-black text-center">
-                {title}
-              </h2>
-              <p className="text-gray-600 text-center text-sm md:text-base">
-                {description}
-              </p>
+              <div className="text-blue-500 text-3xl md:text-4xl mb-4">{icon}</div>
+              <h2 className="text-xl md:text-2xl font-bold mb-2 text-white text-center">{title}</h2>
+              <p className="text-gray-600 text-center text-sm md:text-base">{description}</p>
               <span
                 className="absolute left-0 bottom-0 w-full h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 
                 transition-transform duration-300 ease-out origin-left"
