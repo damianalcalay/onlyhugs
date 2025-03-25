@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import Carousel from "../carousel/Carousel";
 import Link from "next/link";
 
-// Definimos la animación para todo el bloque
 const slideLeftToRight = {
   hidden: { opacity: 0, x: -100 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
@@ -25,9 +24,7 @@ const Statistics = () => {
         viewport={{ once: true }}
       >
         <h2 className="w-full text-center text-white text-5xl pb-10">
-          <span className="text-[#00AEEF]">N</span>UMBER <span className="text-[#00AEEF]">S</span>
-          PEAK <span className="text-[#00AEEF]">F</span>
-          OR <span className="text-[#00AEEF]">U</span>S
+          <span className="text-[#00AEEF]">S</span>TATISTICS
         </h2>
       </motion.div>
       <motion.div
