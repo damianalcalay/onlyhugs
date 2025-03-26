@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
 interface FormData {
@@ -71,13 +70,6 @@ const Contact = () => {
         [name]: value,
       }));
     }
-  };
-
-  const handlePhoneChange = (value: string) => {
-    setFormData(prevData => ({
-      ...prevData,
-      phone: value,
-    }));
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

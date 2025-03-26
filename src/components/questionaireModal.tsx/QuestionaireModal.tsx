@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { createPortal } from "react-dom";
 
 const QuestionnaireModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
