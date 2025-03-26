@@ -4,27 +4,35 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { createPortal } from "react-dom";
 
+interface FormData {
+  name?: string;
+  description?: string;
+  creatorType?: "A" | "B" | "C";
+}
+
+type Step = "initial" | "A" | "B" | "C" | "contact";
+
 const QuestionnaireModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
-  const [formStep, setFormStep] = useState<"initial" | "A" | "B" | "C" | "contact">("initial");
-  const [formData, setFormData] = useState<any>({});
+  const [formData, setFormData] = useState<FormData>({});
+  const [formStep, setFormStep] = useState<Step>("initial");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData((prev: any) => ({ ...prev, [name]: value }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleOptionClick = (value: "A" | "B" | "C") => {
-    setFormData((prev: any) => ({ ...prev, creatorType: value }));
+    setFormData(prev => ({ ...prev, creatorType: value }));
     setFormStep(value);
   };
 
   const handleSubmitStep = (e: React.FormEvent) => {
     e.preventDefault();
-    setFormStep("contact");
+    setFormStep("contact"); // ✅ ahora es válido
   };
 
   const handleClose = () => {
-    setFormStep("initial");
+    setFormStep("initial"); // ✅ también válido
     setFormData({});
     onClose();
   };
