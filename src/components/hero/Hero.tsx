@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
+import QuestionnaireModal from "../questionaireModal.tsx/QuestionaireModal";
 
 export const slideLeftToRight = {
   hidden: { opacity: 0, x: -100 },
@@ -19,6 +20,7 @@ const routes = [
 
 const HeroSection = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     if (menuOpen) {
@@ -29,7 +31,7 @@ const HeroSection = () => {
   }, [menuOpen]);
 
   return (
-    <section className="w-full h-min-screen md:px-8 lg:px-10 xl:px-20 lg:py-20 flex flex-col xl:space-y-0">
+    <section className="w-full h-min-screen md:px-8 lg:px-10 xl:px-20 lg:py-20 flex flex-col xl:space-y-0 ">
       <nav className="flex justify-between items-center p-4 xl:pb-20">
         <div className="lg:hidden flex w-full justify-end items-center p-4">
           <button
@@ -53,7 +55,7 @@ const HeroSection = () => {
           >
             <FaTimes />
           </button>
-          <span className="text-4xl uppercase absolute bottom-6 left-6">BLUEBELBET</span>
+          <span className="text-4xl uppercase absolute bottom-6 left-6">BLUEBELVET</span>
           <ul className="space-y-6 mt-12">
             {routes.map(route => (
               <li key={route.label}>
@@ -79,36 +81,35 @@ const HeroSection = () => {
           viewport={{ once: true }}
           variants={slideLeftToRight}
         >
-          <motion.div
-            className="flex flex-col space-y-6 px-6 xl:text-left"
-            variants={slideLeftToRight}
-          >
-            <div className="flex flex-col xl:flex-row items-start justify-center xl:justify-start xl:items-center space-y-4 xl:space-y-0">
+          <motion.div className="flex flex-col px-6 xl:text-left" variants={slideLeftToRight}>
+            <div className="flex flex-col xl:flex-row items-start justify-center xl:justify-start xl:items-center space-y-4 xl:space-y-0 ">
               <img src="/icons/onlyfans.png" alt="" className="w-16 xl:w-20" />
-              <h3 className="uppercase text-xl xl:text-3xl text-white font-semibold">
+              <h3 className="uppercase text-lg text-white font-semibold">
                 #1 <span className="text-[#00AEEF]">onlyfans</span> agency
               </h3>
             </div>
 
             <h1 className="uppercase text-4xl xl:text-[90px] text-white font-semibold max-w-full xl:max-w-[38rem] leading-[2.5rem] xl:leading-[100px]">
               Work <span className="text-[#00AEEF]">Less</span>.{" "}
-              <span className="text-[#00AEEF]">Earn</span> More.
+              <span className="text-[#008CCF]">Earn</span> More.
             </h1>
             <h3 className="uppercase text-2xl xl:text-5xl text-white tracking-wider w-full xl:w-[50rem] leading-[1.75rem] xl:leading-[3.5rem]">
               The Ultimate Powerhouse in <span className="text-[#00AEEF]">OnlyFans Management</span>
             </h3>
             <Link href="#connect-with-us">
-              <button className="btn-pulse bg-[#00AEEF] rounded-full text-white text-sm md:text-lg uppercase w-32 md:w-40 lg:w-48 h-auto p-2">
+              <button
+                onClick={() => setShowModal(true)}
+                className="btn-pulse mt-6 bg-[#00AEEF] rounded-full text-white text-sm md:text-lg uppercase w-32 md:w-40 lg:w-48 h-auto p-2"
+              >
                 Apply Now
               </button>
             </Link>
           </motion.div>
 
           <motion.div
-            className="relative w-full xl:w-[100rem] flex justify-center items-center mt-6 xl:mt-0 pb-10 overflow-visible"
+            className="w-full xl:w-[100rem] flex justify-center items-center mt-6 xl:mt-0 pb-10 overflow-visible"
             variants={slideLeftToRight}
           >
-            <div className="blur-ellipse top-16 left-36 -translate-x-1/2 -z-10"></div>
             <img
               src="/assets/statistics.png"
               alt="statistics"
@@ -117,6 +118,7 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
       )}
+      <QuestionnaireModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </section>
   );
 };

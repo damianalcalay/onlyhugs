@@ -1,0 +1,9 @@
+
+arreglar tipografias 
+agregar hover en navbar para que pase de gris a blanco como en figma
+separacion en navbar links, estan muy juntos
+arreglar espaciados entre secciones
+arreglar responsive
+ver bug navbar fixed con carousel aparece el navbar por la cara
+cambiar texto de la seccion de services: Over the past year we have achieved remarkable success across every key metric. From a growing number of talented models joinning our platform to the substantial earnings generated, our performance  is a testament to the hard work and dedication of our team.
+arreglar nombre a BLUE BELVET

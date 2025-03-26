@@ -146,7 +146,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        primary: ["Poppins", "sans-serif"],
+        sans: ["Montserrat", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
       },
       fontWeight: {
         regular: "400",

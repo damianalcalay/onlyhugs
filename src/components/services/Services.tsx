@@ -28,12 +28,11 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="w-full min-h-screen md:px-6 lg:px-10 xl:px-20 pb-20" id="services">
+    <section className="w-full md:px-6 lg:px-10 pb-20" id="services">
       <div className="flex flex-col">
-        <h2 className="w-full text-center text-white text-5xl pb-10">
-          <span className="text-[#00AEEF]">O</span>UR <span className="text-[#00AEEF]">W</span>
-          ORK
-        </h2>
+        {/* <h2 className="w-full text-center text-white text-5xl pb-10">
+          <span className="text-[#00AEEF]">S</span>ERVICES
+        </h2> */}
         <div className="flex flex-col xl:flex-row xl:items-center xl:justify-center ">
           {services.map((service, index) => (
             <div

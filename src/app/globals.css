@@ -8,34 +8,39 @@
   --font-primary: "Poppins", sans-serif;
 }
 
-/* Importar la fuente Poppins Regular */
 @font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Poppins-Regular.ttf") format("truetype");
-  font-weight: 400; /* Peso regular */
+  font-family: "Roboto";
+  src: url("/fonts/roboto/Roboto-Regular.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Poppins-Bold.ttf") format("truetype");
-  font-weight: 700; /* Peso negrita */
+  font-family: "Roboto";
+  src: url("/fonts/roboto/Roboto-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Poppins-Light.ttf") format("truetype");
-  font-weight: 300; /* Peso ligero */
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat/Montserrat-Regular.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: url("/fonts/Poppins-Medium.ttf") format("truetype");
-  font-weight: 500; /* Peso medio */
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat/Montserrat-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
+
+/* Agrega más variantes si las tienes */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -215,17 +220,19 @@ body {
   }
 }
 
-@layer utilities {
-  .blur-ellipse {
-    position: absolute;
-    width: 629px;
-    height: 527px;
-    background: linear-gradient(360deg, #00aeef 0%, #020f13 100%);
-    filter: blur(120px);
-    transform: rotate(-70deg);
-    opacity: 0.5;
-    z-index: 0;
-    border-radius: 9999px;
-    pointer-events: none;
-  }
+.glass-vertical {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(45, 45, 45, 0.15) 42.5%,
+    rgba(115, 115, 115, 0.1) 100%
+  );
+  border: 1px solid rgba(65, 65, 65, 0.6); /* #414141 @ 60% */
+  border-radius: 40px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 24px;
+  color: white;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }

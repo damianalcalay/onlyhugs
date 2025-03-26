@@ -2,7 +2,7 @@ import React from "react";
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white py-8 min-w-full">
+    <footer className="text-white py-8 min-w-full bg-[#181818]">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
         <div>
           <h4 className="text-lg font-semibold mb-4">Navigation</h4>
@@ -55,14 +55,14 @@ export function Footer() {
         {/* Tercera columna: Información de contacto */}
         <div>
           <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-          <p>Email: support@BLUEBELBET.com</p>
+          <p>Email: support@BLUEBELVET.com</p>
           <p>Phone: +1 (555) 123-4567</p>
         </div>
       </div>
 
       {/* Derechos reservados */}
       <div className="mt-8 text-center px-4">
-        <p>© 2024 BLUEBELBET. All rights reserved.</p>
+        <p>© 2025 BLUEBELVET. All rights reserved.</p>
       </div>
     </footer>
   );

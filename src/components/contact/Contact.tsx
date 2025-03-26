@@ -7,15 +7,12 @@ import "react-phone-input-2/lib/style.css";
 
 interface FormData {
   name: string;
+  lastName: string;
   email: string;
   countryCode: string;
   phone: string;
   message: string;
   termsAccepted: boolean;
-  contentType: string;
-  contentCreationStyle: string;
-  experience: string;
-  niche: string[];
 }
 
 const slideLeftToRight = {
@@ -40,15 +37,12 @@ const slideLeftToRight = {
 const Contact = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
+    lastName: "",
     email: "",
     countryCode: "",
     phone: "",
     message: "",
     termsAccepted: false,
-    contentType: "",
-    contentCreationStyle: "",
-    experience: "",
-    niche: [],
   });
 
   const handleChange = (
@@ -97,7 +91,7 @@ const Contact = () => {
 
   return (
     <section id="contact-us" className="pb-20 ">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 w-full flex flex-col items-center justify-center">
         <motion.div
           className="relative"
           variants={slideLeftToRight}
@@ -113,151 +107,104 @@ const Contact = () => {
 
         <motion.form
           onSubmit={handleSubmit}
-          className="space-y-6 pt-10"
+          className="glass-vertical border border-[#414141] rounded-xl w-[70rem]"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={slideLeftToRight}
         >
-          <motion.div className="relative" variants={slideLeftToRight}>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Name"
-              required
-              className="w-full p-2 text-white border-b-2 bg-black placeholder:text-white rounded-md"
-            />
-          </motion.div>
-
-          <motion.div className="relative" variants={slideLeftToRight}>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Email"
-              required
-              className="w-full p-2 text-white border-b-2 bg-black placeholder:text-white rounded-md"
-            />
-          </motion.div>
-
-          <motion.div className="relative" variants={slideLeftToRight}>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Message"
-              rows={4}
-              required
-              className="w-full p-2 text-white border-b-2 bg-black placeholder:text-white rounded-md"
-            ></textarea>
-          </motion.div>
-
-          <motion.div className="relative" variants={slideLeftToRight}>
-            <PhoneInput
-              country={"us"}
-              value={formData.phone}
-              onChange={handlePhoneChange}
-              inputClass="w-full p-2 text-black border-b-2 border-primary focus:outline-none focus:border-primary"
-              containerClass="phone-input-container text-black border-primary "
-              buttonClass="phone-input-button"
-              dropdownClass="phone-input-dropdown"
-              enableSearch={true}
-            />
-          </motion.div>
-
-          <motion.div className="relative" variants={slideLeftToRight}>
-            <select
-              name="contentType"
-              value={formData.contentType}
-              onChange={handleChange}
-              required
-              className="w-full p-2 text-white border-b-2 bg-black placeholder:text-white rounded-md"
-            >
-              <option value="">Tipo de contenido</option>
-              <option value="video">Video</option>
-              <option value="fotos">Fotos</option>
-              <option value="artículos">Artículos</option>
-              <option value="streams en vivo">Streams en vivo</option>
-            </select>
-          </motion.div>
-
-          <motion.div className="relative" variants={slideLeftToRight}>
-            <select
-              name="contentCreationStyle"
-              value={formData.contentCreationStyle}
-              onChange={handleChange}
-              required
-              className="w-full p-2 text-white border-b-2 bg-black placeholder:text-white rounded-md"
-            >
-              <option value="">¿Cómo creas contenido?</option>
-              <option value="solo">Solo</option>
-              <option value="con otra chica">Con otra chica</option>
-              <option value="con otro chico">Con otro chico</option>
-              <option value="en grupo">En grupo</option>
-            </select>
-          </motion.div>
-
-          <motion.div className="relative" variants={slideLeftToRight}>
-            <select
-              name="experience"
-              value={formData.experience}
-              onChange={handleChange}
-              required
-              className="w-full p-2 text-white border-b-2 bg-black placeholder:text-white rounded-md"
-            >
-              <option value="">Experiencia</option>
-              <option value="menos de 1 año">Menos de 1 año</option>
-              <option value="entre 1 y 2 años">Entre 1 y 2 años</option>
-              <option value="más de 2 años">Más de 2 años</option>
-            </select>
-          </motion.div>
-
-          <motion.div className="relative" variants={slideLeftToRight}>
-            <select
-              name="niche"
-              value={formData.niche}
-              onChange={handleChange}
-              multiple
-              required
-              className="w-full p-2 text-white border-b-2 bg-black placeholder:text-white rounded-md"
-            >
-              <option value="fitness">Fitness</option>
-              <option value="lifestyle">Lifestyle</option>
-              <option value="moda">Moda</option>
-              <option value="tecnología">Tecnología</option>
-              <option value="gaming">Gaming</option>
-              <option value="viajes">Viajes</option>
-            </select>
-          </motion.div>
-
-          <motion.div className="flex items-center" variants={slideLeftToRight}>
-            <input
-              type="checkbox"
-              name="termsAccepted"
-              checked={formData.termsAccepted}
-              onChange={handleChange}
-              required
-              className="mr-2"
-            />
-            <label className="text-black">
-              I have read and accept the <a href="politica-de-privacidad">privacy policy</a> and{" "}
-              <a href="terminos-de-servicio">terms of service</a>.
-            </label>
-          </motion.div>
-
           <motion.div
-            className="w-full flex items-center justify-center"
             variants={slideLeftToRight}
+            className="grid grid-cols-1 md:grid-cols-1 gap-y-14 py-10 px-10 w-full"
           >
-            <button
-              type="submit"
-              className="bg-[#00AEEF] rounded-full text-white text-sm md:text-lg uppercase w-32 md:w-40 lg:w-48 h-auto p-2"
+            <div className="grid grid-cols-2 gap-y-10 gap-x-10">
+              <motion.div className="relative  flex flex-col space-y-2" variants={slideLeftToRight}>
+                <span>First Name</span>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-[#1a1a1a] border border-transparent rounded-lg px-4 py-3 focus:outline-none focus:border-[#00AEEF] placeholder:text-gray-400  border-[#414141]"
+                />
+              </motion.div>
+              <motion.div className="relative flex flex-col space-y-2" variants={slideLeftToRight}>
+                <span>Last Name</span>
+                <input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  required
+                  className="w-full bg-[#1a1a1a] border border-transparent rounded-lg px-4 py-3 focus:outline-none focus:border-[#00AEEF] placeholder:text-gray-400  border-[#414141]"
+                />
+              </motion.div>
+            </div>
+
+            <motion.div className="relative flex flex-col space-y-2" variants={slideLeftToRight}>
+              <span>Your E-mail</span>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full bg-[#1a1a1a] border border-transparent rounded-lg px-4 py-3 focus:outline-none focus:border-[#00AEEF] placeholder:text-gray-400  border-[#414141]"
+              />
+            </motion.div>
+
+            <motion.div className="relative flex flex-col space-y-2" variants={slideLeftToRight}>
+              <span>Your Phone Number</span>
+              <input
+                type="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full bg-[#1a1a1a] border border-transparent rounded-lg px-4 py-3 focus:outline-none focus:border-[#00AEEF] placeholder:text-gray-400  border-[#414141]"
+              />
+            </motion.div>
+
+            <div className="flex flex-col space-y-4">
+              <motion.div className="relative flex flex-col space-y-2" variants={slideLeftToRight}>
+                <span>Write your enquiry</span>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={4}
+                  required
+                  className="w-full bg-[#1a1a1a] border border-transparent rounded-lg px-4 py-3 focus:outline-none focus:border-[#00AEEF] placeholder:text-gray-400  border-[#414141]"
+                ></textarea>
+              </motion.div>
+
+              <motion.div className="flex items-center" variants={slideLeftToRight}>
+                <input
+                  type="checkbox"
+                  name="termsAccepted"
+                  checked={formData.termsAccepted}
+                  onChange={handleChange}
+                  required
+                  className="mr-2"
+                />
+                <label className="text-white">
+                  I have read and accept the <a href="politica-de-privacidad">privacy policy</a> and{" "}
+                  <a href="terminos-de-servicio">terms of service</a>.
+                </label>
+              </motion.div>
+            </div>
+
+            <motion.div
+              className="w-full flex items-center justify-center"
+              variants={slideLeftToRight}
             >
-              Apply Now
-            </button>
+              <button
+                type="submit"
+                className="bg-[#00AEEF] rounded-full text-white text-sm md:text-lg uppercase w-32 md:w-40 lg:w-48 h-auto p-2"
+              >
+                Apply Now
+              </button>
+            </motion.div>
           </motion.div>
         </motion.form>
       </div>

@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Slider from "../slider/Slider";
+import QuestionnaireModal from "../questionaireModal.tsx/QuestionaireModal";
 
 // Definimos la animación para todo el bloque
 const slideLeftToRight = {
@@ -12,6 +13,7 @@ const slideLeftToRight = {
 };
 
 const OurWork = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <section
       className="w-full h-min-screen md:px-6 lg:px-10 xl:px-20 pb-20 flex flex-col space-y-20"
@@ -43,7 +45,7 @@ const OurWork = () => {
         >
           <h1 className="uppercase text-4xl xl:text-[58px] max-w-[700px] text-white font-semibold leading-[2.5rem] xl:leading-[3.5rem]">
             CHOOSE <span className="text-[#00AEEF]">EXCELLENCE</span> WORK WITH THE{" "}
-            <span className="text-[#00AEEF]">FINEST.</span>
+            <span className="text-[#008CCF]">FINEST.</span>
           </h1>
           <p className="text-white max-w-full xl:max-w-2xl text-sm xl:text-[18px]">
             Our agency stands out by offering tailored marketing strategies, expert guidance and
@@ -51,11 +53,15 @@ const OurWork = () => {
             build lasting impactful brands in the industry.
           </p>
           <Link href="#connect-with-us">
-            <button className="btn-pulse bg-[#00AEEF] rounded-full text-white text-sm md:text-lg uppercase w-32 md:w-40 lg:w-48 h-auto p-2">
+            <button
+              onClick={() => setShowModal(true)}
+              className="btn-pulse bg-[#00AEEF] rounded-full text-white text-sm md:text-lg uppercase w-32 md:w-40 lg:w-48 h-auto p-2"
+            >
               Apply Now
             </button>
           </Link>
         </motion.div>
+        <QuestionnaireModal isOpen={showModal} onClose={() => setShowModal(false)} />
 
         <motion.div
           className="w-full items-center justify-center flex flex-col space-y-6 px-6 xl:text-left"

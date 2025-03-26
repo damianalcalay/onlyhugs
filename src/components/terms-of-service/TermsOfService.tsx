@@ -3,92 +3,88 @@ import React from "react";
 
 const TermsOfService = () => {
   return (
-    <div className="container mx-auto px-4 py-8 text-white">
-      <h1 className="text-3xl font-bold mb-4">Términos de Servicio</h1>
+    <div className="container mx-auto px-4 py-8 text-black">
+      <h1 className="text-3xl font-bold mb-4">Terms of Service</h1>
       <p className="mb-4">
-        Bienvenido a <strong>BLUEBELBET</strong>. Al acceder a nuestro sitio web y utilizar nuestros
-        servicios, aceptas cumplir con estos Términos de Servicio. Si no estás de acuerdo con alguno
-        de los términos aquí expuestos, te pedimos que no utilices nuestro sitio web o nuestros
-        servicios.
+        Welcome to <strong>BLUEBELVET</strong>. By accessing our website and using our services, you
+        agree to comply with these Terms of Service. If you do not agree with any of the terms
+        outlined here, please do not use our website or services.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-2">1. Aceptación de los Términos</h2>
+      <h2 className="text-2xl font-semibold mb-2">1. Acceptance of Terms</h2>
       <p className="mb-4">
-        Al utilizar este sitio web, confirmas que has leído, comprendido y aceptas cumplir con estos
-        Términos de Servicio. Nos reservamos el derecho de modificar estos términos en cualquier
-        momento, y cualquier cambio será publicado en esta página.
+        By using this website, you confirm that you have read, understood, and agree to abide by
+        these Terms of Service. We reserve the right to modify these terms at any time, and any
+        changes will be posted on this page.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-2">2. Uso del Sitio Web</h2>
+      <h2 className="text-2xl font-semibold mb-2">2. Use of the Website</h2>
       <p className="mb-4">
-        Este sitio web está destinado exclusivamente a usuarios que desean obtener información sobre
-        nuestros servicios y contactarnos a través del formulario. El uso no autorizado de este
-        sitio web está prohibido, lo que incluye, pero no se limita a, intentos de acceder a áreas
-        restringidas, modificar el contenido del sitio o utilizar el sitio web para cualquier
-        propósito ilegal.
+        This website is intended solely for users seeking information about our services and for
+        contacting us through the form provided. Unauthorized use of this website is prohibited,
+        including but not limited to attempts to access restricted areas, modify site content, or
+        use the site for any illegal purposes.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-2">3. Propiedad Intelectual</h2>
+      <h2 className="text-2xl font-semibold mb-2">3. Intellectual Property</h2>
       <p className="mb-4">
-        Todo el contenido de este sitio web, incluidos textos, gráficos, logotipos, imágenes, videos
-        y cualquier otro material, es propiedad de <strong>BLUEBELBET</strong> o de sus licenciantes
-        y está protegido por las leyes de propiedad intelectual. No puedes utilizar, copiar,
-        reproducir o distribuir ningún contenido sin nuestro previo consentimiento por escrito.
+        All content on this website, including text, graphics, logos, images, videos, and any other
+        material, is the property of <strong>BLUEBELVET</strong> or its licensors and is protected
+        by intellectual property laws. You may not use, copy, reproduce, or distribute any content
+        without our prior written consent.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-2">4. Enlaces a Sitios de Terceros</h2>
+      <h2 className="text-2xl font-semibold mb-2">4. Links to Third-Party Sites</h2>
       <p className="mb-4">
-        Nuestro sitio web puede contener enlaces a sitios web de terceros. Estos enlaces se
-        proporcionan únicamente para tu conveniencia. No somos responsables del contenido o las
-        prácticas de privacidad de esos sitios externos, y el acceso a ellos es bajo tu propio
-        riesgo.
+        Our website may contain links to third-party websites. These links are provided solely for
+        your convenience. We are not responsible for the content or privacy practices of those
+        external sites, and access to them is at your own risk.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-2">5. Limitación de Responsabilidad</h2>
+      <h2 className="text-2xl font-semibold mb-2">5. Limitation of Liability</h2>
       <p className="mb-4">
-        No garantizamos que el sitio web esté siempre disponible o que esté libre de errores. En la
-        medida permitida por la ley, no seremos responsables de ningún daño directo, indirecto,
-        incidental o consecuente que resulte del uso o la imposibilidad de uso del sitio web.
+        We do not guarantee that the website will always be available or error-free. To the extent
+        permitted by law, we shall not be liable for any direct, indirect, incidental, or
+        consequential damages resulting from the use or inability to use the website.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-2">6. Modificaciones al Sitio y Servicios</h2>
+      <h2 className="text-2xl font-semibold mb-2">6. Modifications to the Site and Services</h2>
       <p className="mb-4">
-        Nos reservamos el derecho de modificar o descontinuar el sitio web y cualquier servicio
-        relacionado, ya sea temporal o permanentemente, en cualquier momento y sin previo aviso. No
-        seremos responsables ante ti o terceros por cualquier modificación, suspensión o
-        interrupción del servicio.
+        We reserve the right to modify or discontinue the website and any related services, whether
+        temporarily or permanently, at any time and without prior notice. We shall not be liable to
+        you or any third party for any modification, suspension, or interruption of service.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-2">7. Privacidad</h2>
+      <h2 className="text-2xl font-semibold mb-2">7. Privacy</h2>
       <p className="mb-4">
-        El uso de nuestros servicios también está sujeto a nuestra{" "}
+        The use of our services is also subject to our{" "}
         <a href="/politica-de-privacidad" className="text-blue-500">
-          Política de Privacidad
+          Privacy Policy
         </a>
-        . Te recomendamos que revises nuestra Política de Privacidad para obtener más información
-        sobre cómo manejamos tus datos personales.
+        . We encourage you to review our Privacy Policy to learn more about how we handle your
+        personal data.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-2">8. Ley Aplicable</h2>
+      <h2 className="text-2xl font-semibold mb-2">8. Governing Law</h2>
       <p className="mb-4">
-        Estos Términos de Servicio se regirán e interpretarán de acuerdo con las leyes del país
-        donde opera <strong>BLUEBELBET</strong>. Cualquier disputa relacionada con estos términos
-        será resuelta en los tribunales de esa jurisdicción.
+        These Terms of Service shall be governed by and construed in accordance with the laws of the
+        country where <strong>BLUEBELVET</strong> operates. Any disputes related to these terms
+        shall be resolved in the courts of that jurisdiction.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-2">9. Contacto</h2>
+      <h2 className="text-2xl font-semibold mb-2">9. Contact</h2>
       <p className="mb-4">
-        Si tienes preguntas o inquietudes acerca de estos Términos de Servicio, no dudes en
-        contactarnos a través del correo electrónico:
+        If you have any questions or concerns about these Terms of Service, please feel free to
+        contact us via email:
       </p>
       <p className="mb-4">
-        Correo electrónico:{" "}
-        <a href="mailto:BLUEBELBET@soporte.com" className="text-blue-500">
-          [correo electrónico de contacto]
+        Email:{" "}
+        <a href="mailto:BLUEBELVET@support.com" className="text-blue-500">
+          [contact email]
         </a>
       </p>
 
-      <p className="text-sm text-gray-500">Fecha de última actualización: [Fecha]</p>
+      <p className="text-sm text-gray-500">Last updated: [Date]</p>
     </div>
   );
 };

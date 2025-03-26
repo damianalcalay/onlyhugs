@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Carousel from "../carousel/Carousel";
 import Link from "next/link";
+import QuestionnaireModal from "../questionaireModal.tsx/QuestionaireModal";
 
 const slideLeftToRight = {
   hidden: { opacity: 0, x: -100 },
@@ -11,6 +12,7 @@ const slideLeftToRight = {
 };
 
 const Statistics = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <section
       className="w-full h-min-screen md:px-6 lg:px-10 xl:px-20 pb-20 flex flex-col xl:space-y-20"
@@ -23,9 +25,9 @@ const Statistics = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <h2 className="w-full text-center text-white text-5xl pb-10">
+        {/* <h2 className="w-full text-center text-white text-5xl pb-10">
           <span className="text-[#00AEEF]">S</span>TATISTICS
-        </h2>
+        </h2> */}
       </motion.div>
       <motion.div
         className="flex flex-col 2xl:flex-row items-center"
@@ -59,12 +61,16 @@ const Statistics = () => {
             to set new standards of excellence in the industry.
           </p>
           <Link href="#connect-with-us">
-            <button className="btn-pulse bg-[#00AEEF] rounded-full text-white text-sm md:text-lg uppercase w-32 md:w-40 lg:w-48 h-auto p-2">
+            <button
+              onClick={() => setShowModal(true)}
+              className="btn-pulse bg-[#00AEEF] rounded-full text-white text-sm md:text-lg uppercase w-32 md:w-40 lg:w-48 h-auto p-2"
+            >
               Apply Now
             </button>
           </Link>
         </motion.div>
       </motion.div>
+      <QuestionnaireModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </section>
   );
 };

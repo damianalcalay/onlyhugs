@@ -3,124 +3,114 @@ import React from "react";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="container mx-auto px-4 py-8 text-white">
-      <h1 className="text-3xl font-bold mb-4">Política de Privacidad</h1>
+    <div className="container mx-auto px-4 py-8 text-black">
+      <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
       <p className="mb-4">
-        En <strong>BLUEBELBET S.L.</strong> (en adelante, “la Agencia”), nos comprometemos a
-        proteger y respetar la privacidad de nuestros usuarios. Esta Política de Privacidad describe
-        cómo recopilamos, utilizamos y protegemos la información personal que proporcionas al
-        utilizar nuestra página web y formulario de contacto.
+        At <strong>BLUEBELVET S.L.</strong> (hereinafter referred to as “the Agency”), we are
+        committed to protecting and respecting the privacy of our users. This Privacy Policy
+        describes how we collect, use, and protect the personal information you provide when using
+        our website and contact form.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-2">1. Información que Recopilamos</h2>
+      <h2 className="text-2xl font-semibold mb-2">1. Information We Collect</h2>
       <p className="mb-4">
-        Cuando visitas nuestra página web y decides completar el formulario de contacto, podemos
-        recopilar la siguiente información personal:
+        When you visit our website and choose to complete the contact form, we may collect the
+        following personal information:
       </p>
       <ul className="list-disc list-inside mb-4">
-        <li>Nombre</li>
-        <li>Correo electrónico</li>
-        <li>Número de teléfono</li>
-        <li>Empresa o cargo (opcional)</li>
+        <li>Name</li>
+        <li>Email address</li>
+        <li>Phone number</li>
+        <li>Company or position (optional)</li>
         <li>
-          Cualquier otra información que decidas incluir en el mensaje enviado a través del
-          formulario de contacto
+          Any other information you choose to include in the message sent through the contact form
         </li>
       </ul>
 
-      <h2 className="text-2xl font-semibold mb-2">2. Cómo Utilizamos la Información</h2>
+      <h2 className="text-2xl font-semibold mb-2">2. How We Use the Information</h2>
       <p className="mb-4">
-        La información recopilada se utilizará únicamente para los siguientes fines:
+        The collected information will be used solely for the following purposes:
       </p>
       <ul className="list-disc list-inside mb-4">
         <li>
-          <strong>Contactar contigo:</strong> Utilizamos tus datos para ponernos en contacto contigo
-          y responder a tus solicitudes o consultas.
+          <strong>To contact you:</strong> We use your data to reach out and respond to your
+          requests or inquiries.
         </li>
         <li>
-          <strong>Organizar reuniones o llamadas:</strong> Tus datos nos permiten agendar reuniones
-          o llamadas para discutir los servicios que ofrecemos.
+          <strong>To schedule meetings or calls:</strong> Your data allows us to arrange meetings or
+          calls to discuss the services we offer.
         </li>
         <li>
-          <strong>Mejorar nuestros servicios:</strong> Los datos nos ayudan a mejorar nuestra oferta
-          de servicios y la experiencia de usuario en nuestro sitio web.
+          <strong>To improve our services:</strong> The data helps us enhance our service offerings
+          and user experience on our website.
         </li>
       </ul>
 
-      <h2 className="text-2xl font-semibold mb-2">3. Cómo Protegemos Tu Información</h2>
+      <h2 className="text-2xl font-semibold mb-2">3. How We Protect Your Information</h2>
       <p className="mb-4">
-        Nos tomamos en serio la seguridad de tu información. Implementamos medidas técnicas y
-        organizativas adecuadas para proteger tu información personal contra el acceso no
-        autorizado, la divulgación, la alteración o la destrucción.
+        We take the security of your information seriously. We implement appropriate technical and
+        organizational measures to protect your personal information against unauthorized access,
+        disclosure, alteration, or destruction.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-2">4. Compartir Información con Terceros</h2>
+      <h2 className="text-2xl font-semibold mb-2">4. Sharing Information with Third Parties</h2>
       <p className="mb-4">
-        La Agencia no venderá, distribuirá ni alquilará tu información personal a terceros. Sin
-        embargo, podemos compartir tu información con proveedores de servicios que nos ayuden en la
-        operación del sitio web o en la organización de las reuniones, siempre y cuando estos
-        terceros se comprometan a mantener tu información confidencial y a utilizarla únicamente
-        para los fines para los que fue compartida.
+        The Agency will not sell, distribute, or rent your personal information to third parties.
+        However, we may share your information with service providers who assist us in operating the
+        website or organizing meetings, provided they agree to keep your information confidential
+        and use it solely for the intended purposes.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-2">5. Tus Derechos</h2>
-      <p className="mb-4">Tienes derecho a:</p>
+      <h2 className="text-2xl font-semibold mb-2">5. Your Rights</h2>
+      <p className="mb-4">You have the right to:</p>
       <ul className="list-disc list-inside mb-4">
-        <li>Acceder, rectificar o eliminar la información personal que hemos recopilado.</li>
+        <li>Access, rectify, or delete the personal information we have collected.</li>
+        <li>Withdraw your consent at any time regarding the use of your personal information.</li>
         <li>
-          Retirar tu consentimiento en cualquier momento para el uso de tu información personal.
-        </li>
-        <li>
-          Solicitar que no procesemos tus datos con fines de marketing o de contacto si así lo
-          prefieres.
+          Request that we do not process your data for marketing or contact purposes if you so
+          prefer.
         </li>
       </ul>
       <p className="mb-4">
-        Para ejercer cualquiera de estos derechos, puedes ponerte en contacto con nosotros a través
-        del correo electrónico{" "}
-        <a href="mailto:BLUEBELBET@soporte.com" className="text-blue-500">
-          [correo electrónico de contacto]
+        To exercise any of these rights, you may contact us via email at{" "}
+        <a href="mailto:BLUEBELVET@support.com" className="text-blue-500">
+          [contact email]
         </a>
         .
       </p>
 
-      <h2 className="text-2xl font-semibold mb-2">6. Conservación de Datos</h2>
+      <h2 className="text-2xl font-semibold mb-2">6. Data Retention</h2>
       <p className="mb-4">
-        Mantendremos tus datos personales durante el tiempo necesario para cumplir con los fines
-        establecidos en esta Política de Privacidad, o durante el tiempo que la ley lo exija.
+        We will retain your personal data for as long as necessary to fulfill the purposes set out
+        in this Privacy Policy, or for as long as required by law.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-2">7. Enlaces a Otros Sitios Web</h2>
+      <h2 className="text-2xl font-semibold mb-2">7. Links to Other Websites</h2>
       <p className="mb-4">
-        Nuestro sitio web puede contener enlaces a sitios web de terceros. No nos hacemos
-        responsables de las políticas de privacidad o del contenido de estos sitios externos.
+        Our website may contain links to third-party websites. We are not responsible for the
+        privacy practices or content of those external sites.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-2">
-        8. Modificaciones a esta Política de Privacidad
-      </h2>
+      <h2 className="text-2xl font-semibold mb-2">8. Changes to This Privacy Policy</h2>
       <p className="mb-4">
-        Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento.
-        Cualquier cambio será publicado en esta página y entrará en vigor inmediatamente. Te
-        recomendamos que revises esta página periódicamente para mantenerte informado sobre cómo
-        protegemos tu información.
+        We reserve the right to modify this Privacy Policy at any time. Any changes will be posted
+        on this page and will take effect immediately. We encourage you to review this page
+        periodically to stay informed about how we protect your information.
       </p>
 
-      <h2 className="text-2xl font-semibold mb-2">9. Contacto</h2>
+      <h2 className="text-2xl font-semibold mb-2">9. Contact</h2>
       <p className="mb-4">
-        Si tienes preguntas o inquietudes acerca de nuestra Política de Privacidad, no dudes en
-        contactarnos a través de:
+        If you have any questions or concerns about our Privacy Policy, please feel free to contact
+        us at:
       </p>
       <p className="mb-4">
-        Correo electrónico:{" "}
-        <a href="mailto:BLUEBELBET@soporte.com" className="text-blue-500">
-          [correo electrónico de contacto]
+        Email:{" "}
+        <a href="mailto:BLUEBELVET@support.com" className="text-blue-500">
+          [contact email]
         </a>
       </p>
 
-      <p className="text-sm text-gray-500">
-        Fecha de última actualización: 11 de septiembre del 2024
-      </p>
+      <p className="text-sm text-gray-500">Last updated: March 11, 2025</p>
     </div>
   );
 };

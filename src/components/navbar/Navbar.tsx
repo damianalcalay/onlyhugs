@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import QuestionnaireModal from "../questionaireModal.tsx/QuestionaireModal";
 
 const routes = [
   {
@@ -32,7 +33,9 @@ const routes = [
 ];
 
 const Navbar = () => {
+  const [showModal, setShowModal] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
+  const [isAtTop, setIsAtTop] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
@@ -41,8 +44,10 @@ const Navbar = () => {
 
       if (currentY <= 100) {
         setShowNavbar(true);
+        setIsAtTop(true);
       } else if (currentY < lastScrollY) {
         setShowNavbar(true);
+        setIsAtTop(false);
       } else {
         setShowNavbar(false);
       }
@@ -55,16 +60,16 @@ const Navbar = () => {
   }, [lastScrollY]);
   return (
     <nav
-      className={`hidden lg:flex w-full px-6 md:px-10 lg:px-20 py-4 justify-between items-center bg-black shadow-md z-50 transition-all duration-300 ${
-        showNavbar ? "fixed top-0" : "absolute -top-24"
-      }`}
+      className={`hidden lg:flex fixed w-full bg-black px-6 md:px-10 lg:px-20 py-4 justify-between items-center z-50 transition-all duration-300 bg-opacity-0 ${
+        showNavbar ? "top-0 " : "-top-24"
+      } ${isAtTop ? "bg-opacity-0" : " bg-opacity-100"}`}
     >
       <img src="/logo/bb-logo.png" alt="blue belvet logo" />
-      <div className="flex space-x-4 md:space-x-6">
+      <div className="flex w-full items-center justify-center space-x-4 md:space-x-16">
         {routes.map(route => (
           <Link
             key={route.id}
-            className="text-white text-sm md:text-lg cursor-pointer"
+            className="text-white/60 text-sm md:text-lg cursor-pointer hover:text-white duration-300"
             href={route.url}
           >
             {route.label}
@@ -72,10 +77,15 @@ const Navbar = () => {
         ))}
       </div>
       <Link href="#connect-with-us">
-        <button className="relative bg-black border border-white rounded-full text-white text-sm md:text-lg uppercase w-32 md:w-40 lg:w-48 h-auto p-2 overflow-hidden group">
+        <button
+          onClick={() => setShowModal(true)}
+          className="relative  border border-white rounded-full text-white text-sm md:text-lg uppercase w-32 md:w-40 lg:w-48 h-auto p-2 overflow-hidden group hover:bg-[#00AEEF] duration-300"
+        >
           <span className="relative z-10">Apply now</span>
         </button>
       </Link>
+
+      <QuestionnaireModal isOpen={showModal} onClose={() => setShowModal(false)} />
     </nav>
   );
 };
