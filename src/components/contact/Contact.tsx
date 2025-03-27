@@ -3,12 +3,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import "react-phone-input-2/lib/style.css";
+import { saveContactFormData } from "@/lib/actions/saveFormDataFromLanding";
+import LoadingSpinner from "../buttons/loadingSpinner";
 
 interface FormData {
   name: string;
   lastName: string;
   email: string;
-  countryCode: string;
   phone: string;
   message: string;
   termsAccepted: boolean;
@@ -34,11 +35,11 @@ const slideLeftToRight = {
 };
 
 const Contact = () => {
+  const [isAnimating, setIsAnimating] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: "",
     lastName: "",
     email: "",
-    countryCode: "",
     phone: "",
     message: "",
     termsAccepted: false,
@@ -72,18 +73,42 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (formData.termsAccepted) {
-      console.log("Form submitted successfully", formData);
-    } else {
+    setIsAnimating(true);
+
+    if (!formData.termsAccepted) {
       alert("Please accept the terms and conditions to submit the form.");
+      setIsAnimating(false);
+      return;
+    }
+
+    try {
+      const success = await saveContactFormData(formData);
+
+      if (success) {
+        setFormData({
+          name: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+          termsAccepted: false,
+        });
+      } else {
+        alert("There was an error submitting the form. Please try again.");
+      }
+    } catch (error) {
+      console.error("Unexpected error submitting contact form:", error);
+      alert("Unexpected error. Please try again later.");
+    } finally {
+      setIsAnimating(false);
     }
   };
 
   return (
-    <section id="contact-us" className="pb-20 ">
-      <div className="container mx-auto px-4 w-full flex flex-col items-center justify-center">
+    <section id="contact-us" className="pb-20 px-4">
+      <div className="w-full max-w-[1440px] mx-auto flex flex-col items-center justify-center">
         <motion.div
           className="relative"
           variants={slideLeftToRight}
@@ -91,7 +116,7 @@ const Contact = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <h2 className="w-full text-center text-white text-5xl pb-10">
+          <h2 className="w-full text-center text-white text-4xl sm:text-5xl pb-10">
             <span className="text-[#00AEEF]">C</span>ONNECT{" "}
             <span className="text-[#00AEEF]">W</span>ITH <span className="text-[#00AEEF]">U</span>S
           </h2>
@@ -99,7 +124,7 @@ const Contact = () => {
 
         <motion.form
           onSubmit={handleSubmit}
-          className="glass-vertical border border-[#414141] rounded-xl w-[70rem]"
+          className="glass-vertical border border-[#414141] rounded-xl w-full max-w-5xl"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -107,10 +132,11 @@ const Contact = () => {
         >
           <motion.div
             variants={slideLeftToRight}
-            className="grid grid-cols-1 md:grid-cols-1 gap-y-14 py-10 px-10 w-full"
+            className="grid grid-cols-1 gap-y-12 py-10 px-6 sm:px-10 md:px-16"
           >
-            <div className="grid grid-cols-2 gap-y-10 gap-x-10">
-              <motion.div className="relative  flex flex-col space-y-2" variants={slideLeftToRight}>
+            {/* Grid de Nombre y Apellido */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <motion.div className="flex flex-col space-y-2" variants={slideLeftToRight}>
                 <span>First Name</span>
                 <input
                   type="text"
@@ -118,10 +144,10 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full bg-[#1a1a1a] border border-transparent rounded-lg px-4 py-3 focus:outline-none focus:border-[#00AEEF] placeholder:text-gray-400  border-[#414141]"
+                  className="w-full bg-[#1a1a1a] border border-[#414141] rounded-lg px-4 py-3 focus:outline-none focus:border-[#00AEEF] placeholder:text-gray-400"
                 />
               </motion.div>
-              <motion.div className="relative flex flex-col space-y-2" variants={slideLeftToRight}>
+              <motion.div className="flex flex-col space-y-2" variants={slideLeftToRight}>
                 <span>Last Name</span>
                 <input
                   type="text"
@@ -129,12 +155,13 @@ const Contact = () => {
                   value={formData.lastName}
                   onChange={handleChange}
                   required
-                  className="w-full bg-[#1a1a1a] border border-transparent rounded-lg px-4 py-3 focus:outline-none focus:border-[#00AEEF] placeholder:text-gray-400  border-[#414141]"
+                  className="w-full bg-[#1a1a1a] border border-[#414141] rounded-lg px-4 py-3 focus:outline-none focus:border-[#00AEEF] placeholder:text-gray-400"
                 />
               </motion.div>
             </div>
 
-            <motion.div className="relative flex flex-col space-y-2" variants={slideLeftToRight}>
+            {/* Email */}
+            <motion.div className="flex flex-col space-y-2" variants={slideLeftToRight}>
               <span>Your E-mail</span>
               <input
                 type="email"
@@ -142,23 +169,25 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full bg-[#1a1a1a] border border-transparent rounded-lg px-4 py-3 focus:outline-none focus:border-[#00AEEF] placeholder:text-gray-400  border-[#414141]"
+                className="w-full bg-[#1a1a1a] border border-[#414141] rounded-lg px-4 py-3 focus:outline-none focus:border-[#00AEEF] placeholder:text-gray-400"
               />
             </motion.div>
 
-            <motion.div className="relative flex flex-col space-y-2" variants={slideLeftToRight}>
+            {/* Teléfono */}
+            <motion.div className="flex flex-col space-y-2" variants={slideLeftToRight}>
               <span>Your Phone Number</span>
               <input
                 type="phone"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full bg-[#1a1a1a] border border-transparent rounded-lg px-4 py-3 focus:outline-none focus:border-[#00AEEF] placeholder:text-gray-400  border-[#414141]"
+                className="w-full bg-[#1a1a1a] border border-[#414141] rounded-lg px-4 py-3 focus:outline-none focus:border-[#00AEEF] placeholder:text-gray-400"
               />
             </motion.div>
 
-            <div className="flex flex-col space-y-4">
-              <motion.div className="relative flex flex-col space-y-2" variants={slideLeftToRight}>
+            {/* Mensaje y Términos */}
+            <div className="flex flex-col space-y-6">
+              <motion.div className="flex flex-col space-y-2" variants={slideLeftToRight}>
                 <span>Write your enquiry</span>
                 <textarea
                   name="message"
@@ -166,35 +195,44 @@ const Contact = () => {
                   onChange={handleChange}
                   rows={4}
                   required
-                  className="w-full bg-[#1a1a1a] border border-transparent rounded-lg px-4 py-3 focus:outline-none focus:border-[#00AEEF] placeholder:text-gray-400  border-[#414141]"
-                ></textarea>
+                  className="w-full bg-[#1a1a1a] border border-[#414141] rounded-lg px-4 py-3 focus:outline-none focus:border-[#00AEEF] placeholder:text-gray-400"
+                />
               </motion.div>
 
-              <motion.div className="flex items-center" variants={slideLeftToRight}>
+              <motion.div className="flex items-start gap-2" variants={slideLeftToRight}>
                 <input
                   type="checkbox"
                   name="termsAccepted"
                   checked={formData.termsAccepted}
                   onChange={handleChange}
                   required
-                  className="mr-2"
+                  className="mt-1"
                 />
-                <label className="text-white">
-                  I have read and accept the <a href="politica-de-privacidad">privacy policy</a> and{" "}
-                  <a href="terminos-de-servicio">terms of service</a>.
+                <label className="text-white text-sm sm:text-base leading-relaxed">
+                  I have read and accept the{" "}
+                  <a href="politica-de-privacidad" className="underline text-[#00AEEF]">
+                    privacy policy
+                  </a>{" "}
+                  and{" "}
+                  <a href="terminos-de-servicio" className="underline text-[#00AEEF]">
+                    terms of service
+                  </a>
+                  .
                 </label>
               </motion.div>
             </div>
 
+            {/* Botón */}
             <motion.div
               className="w-full flex items-center justify-center"
               variants={slideLeftToRight}
             >
               <button
                 type="submit"
-                className="bg-[#00AEEF] rounded-full text-white text-sm md:text-lg uppercase w-32 md:w-40 lg:w-48 h-auto p-2"
+                disabled={isAnimating}
+                className="bg-[#00AEEF] rounded-full text-white text-sm md:text-lg uppercase w-32 md:w-40 lg:w-48 h-auto p-2 flex items-center justify-center"
               >
-                Apply Now
+                {isAnimating ? <LoadingSpinner size={18} /> : "Submit"}
               </button>
             </motion.div>
           </motion.div>

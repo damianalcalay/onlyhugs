@@ -12,10 +12,11 @@ export const slideLeftToRight = {
 };
 
 const routes = [
-  { label: "Home", href: "#home" },
-  { label: "Capabilities", href: "#capabilities" },
-  { label: "Our Impact", href: "#our-impact" },
-  { label: "Connect with Us", href: "#connect-with-us" },
+  { label: "Services", href: "#services" },
+  { label: "Statistics", href: "#statistics" },
+  { label: "Our Work", href: "#our-work" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Contact Us", href: "#contact-us" },
 ];
 
 const HeroSection = () => {
@@ -32,8 +33,8 @@ const HeroSection = () => {
 
   return (
     <section className="w-full h-min-screen md:px-8 lg:px-10 xl:px-20 lg:py-20 flex flex-col xl:space-y-0 ">
-      <nav className="flex justify-between items-center p-4 xl:pb-20">
-        <div className="lg:hidden flex w-full justify-end items-center p-4">
+      <nav className="flex justify-between items-center p-4 xl:pb-20 text-black">
+        <div className="xl:hidden flex w-full justify-end items-center p-4">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className=" text-white text-3xl "
@@ -44,7 +45,7 @@ const HeroSection = () => {
         </div>
 
         <div
-          className={`fixed top-0 right-0 h-full w-full bg-white text-white p-6 transform ${
+          className={`fixed top-0 right-0 h-full w-full bg-gradient-to-b from-[#000000] via-[#111111] to-[#181818]  text-white p-6 transform ${
             menuOpen ? "translate-x-0" : "translate-x-full"
           } transition-transform duration-300 ease-in-out z-50`}
         >
@@ -55,13 +56,13 @@ const HeroSection = () => {
           >
             <FaTimes />
           </button>
-          <span className="text-4xl uppercase absolute bottom-6 left-6">BLUEBELVET</span>
+          <span className="text-4xl uppercase absolute bottom-6 left-6 ">BLUEBELVET</span>
           <ul className="space-y-6 mt-12">
             {routes.map(route => (
               <li key={route.label}>
                 <a
                   href={route.href}
-                  className="text-2xl uppercase block"
+                  className="text-2xl uppercase block "
                   onClick={() => setMenuOpen(false)}
                 >
                   {route.label}
@@ -96,14 +97,12 @@ const HeroSection = () => {
             <h3 className="uppercase text-2xl xl:text-5xl text-white tracking-wider w-full xl:w-[50rem] leading-[1.75rem] xl:leading-[3.5rem]">
               The Ultimate Powerhouse in <span className="text-[#00AEEF]">OnlyFans Management</span>
             </h3>
-            <Link href="#connect-with-us">
-              <button
-                onClick={() => setShowModal(true)}
-                className="btn-pulse mt-6 bg-[#00AEEF] rounded-full text-white text-sm md:text-lg uppercase w-32 md:w-40 lg:w-48 h-auto p-2"
-              >
-                Apply Now
-              </button>
-            </Link>
+            <button
+              onClick={() => setShowModal(true)}
+              className="btn-pulse mt-6 bg-[#00AEEF] rounded-full text-white text-sm md:text-lg uppercase w-32 md:w-40 lg:w-48 h-auto p-2"
+            >
+              Apply Now
+            </button>
           </motion.div>
 
           <motion.div

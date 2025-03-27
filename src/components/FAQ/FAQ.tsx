@@ -22,7 +22,7 @@ const FAQ = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <h2 className="w-full text-center text-white text-5xl pb-10">
+        <h2 className="w-full text-center text-white text-5xl">
           <span className="text-[#00AEEF]">F</span>REQUENTLY{" "}
           <span className="text-[#00AEEF]">A</span>SKED <span className="text-[#00AEEF]">Q</span>
           UESTIONS

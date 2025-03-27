@@ -60,7 +60,7 @@ const Navbar = () => {
   }, [lastScrollY]);
   return (
     <nav
-      className={`hidden lg:flex fixed w-full bg-black px-6 md:px-10 lg:px-20 py-4 justify-between items-center z-50 transition-all duration-300 bg-opacity-0 ${
+      className={`hidden xl:flex fixed w-full bg-black px-6 md:px-10 lg:px-20 py-4 justify-between items-center z-50 transition-all duration-300 bg-opacity-0 ${
         showNavbar ? "top-0 " : "-top-24"
       } ${isAtTop ? "bg-opacity-0" : " bg-opacity-100"}`}
     >
