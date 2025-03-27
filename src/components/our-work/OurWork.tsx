@@ -2,11 +2,9 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Slider from "../slider/Slider";
 import QuestionnaireModal from "../questionaireModal.tsx/QuestionaireModal";
 
-// Definimos la animación para todo el bloque
 const slideLeftToRight = {
   hidden: { opacity: 0, x: -100 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },

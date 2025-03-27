@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
-import Link from "next/link";
 import QuestionnaireModal from "../questionaireModal.tsx/QuestionaireModal";
 
 export const slideLeftToRight = {
